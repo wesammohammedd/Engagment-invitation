@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagement Details</title>
+    <link rel="stylesheet" href="invite.css">
+</head>
+<body class="page-body">
+
+    <!-- Floating Music Button -->
+    <button id="musicBtn" class="music-floating-btn" onclick="toggleMusic()" title="Play Music">🎵</button>
+    <audio id="bgMusic" loop preload="auto" >
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <main class="content-card slide-up">
+        
+        <!-- Animated Photo Frame -->
+        <div class="photo-wrapper">
+            <img src="png5.png" alt="Ahmed and Wesam">
+            <div class="pulse-ring"></div>
+        </div>
+
+        <h1 class="names-title">Ahmed & Wesam</h1>
+        <p class="subtitle">After all this time? </p>
+        <p class="subtitle">Always ♡ </p>
+
+        <div class="details-box">
+            <div class="detail-item">
+                <span class="icon">⏳</span>
+                <p>Friday, October 9, 2026</p>
+            </div>
+            <div class="detail-item">
+                <span class="icon">🏛️</span>
+                <p>Pearl Hall</p>
+            </div>
+        </div>
+
+        <!-- Interactive Interaction -->
+        <div class="interactive-section">
+            <button class="love-btn" onclick="sendLove(event)">Send Wishes & Love ✨💖</button>
+            <p class="love-counter-text"><span id="loveCount">0</span> Blessings Sent</p>
+        </div>
+
+    </main>
+
+    <script src="invite.js"></script>
+</body>
+</html>

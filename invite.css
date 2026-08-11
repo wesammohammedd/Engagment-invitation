@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #fce4ec 100%);
+    min-height: 100vh;
+    color: #2c2c2c;
+    overflow-x: hidden;
+}
+
+.center-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Styling (Glassmorphism) */
+.envelope-card, .content-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    margin: 30px auto;
+    box-shadow: 0 15px 35px rgba(225, 190, 231, 0.3);
+}
+
+.sparkle-icon { font-size: 1.8rem; margin-bottom: 10px; }
+.names, .names-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #b8860b;
+    margin: 10px 0;
+}
+.sub-title { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #888; }
+.date { font-style: italic; color: #555; }
+.divider { color: #f48fb1; margin: 15px 0; font-size: 1.2rem; }
+
+/* Open Button Animation */
+.open-btn, .love-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #f48fb1, #d81b60);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+    transition: all 0.3s ease;
+}
+
+.open-btn:hover, .love-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(216, 27, 96, 0.4);
+}
+
+/* Floating Music Button */
+.music-floating-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #f48fb1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+/* Photo Wrapper & Pulse Animation */
+.photo-wrapper {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin: 0 auto 20px;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.pulse-ring {
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid #f48fb1;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.98); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+    100% { transform: scale(0.98); opacity: 0.8; }
+}
+
+/* Details Box */
+.details-box {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+}
+.detail-item { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 8px 0; font-size: 0.95rem; }
+
+/* Interactive Hearts Effect */
+.interactive-section { margin-top: 25px; }
+.love-counter-text { font-size: 0.8rem; color: #888; margin-top: 8px; }
+
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.5rem;
+    animation: floatUp 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0) scale(0.8) rotate(0deg); }
+    50% { transform: translateY(-150px) scale(1.3) rotate(15deg); }
+    100% { opacity: 0; transform: translateY(-300px) scale(1) rotate(-15deg); }
+}
+
+/* Entry Animations */
+.fade-in { animation: fadeIn 1.2s ease-in-out; }
+.slide-up { animation: slideUp 1s ease-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
